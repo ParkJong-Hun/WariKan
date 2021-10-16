@@ -35,7 +35,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemGray6Color"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="clickedGoogleLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4RQ-IN-kDu"/>
+                                    <action selector="clickedGoogleLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CfB-Bm-X0o"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creditcard.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="csn-lY-hln">
@@ -61,6 +61,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="flw-ds-1yO"/>
+                    <connections>
+                        <outlet property="signInButton" destination="9be-Kt-dSC" id="HVz-wA-kGp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,7 +72,7 @@
         <!--メイン-->
         <scene sceneID="RYR-sY-YqO">
             <objects>
-                <viewController title="メイン" id="tuf-WR-uVg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" title="メイン" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tuf-WR-uVg" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gCD-yH-KqJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

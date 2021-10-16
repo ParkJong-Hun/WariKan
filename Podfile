@@ -7,8 +7,9 @@ target 'WariKan' do
 
   # Pods for WariKan
   pod 'Firebase/Core'
-  pod 'FirebaseUI'
+  pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
+  pod 'GoogleSignIn'
 
 end

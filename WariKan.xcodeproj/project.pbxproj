@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		181B50A8FF91C56C453AAE2F /* Pods_WariKan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFD658A7E75AA4FB211531C /* Pods_WariKan.framework */; };
-		6B092A66271A93D9007C9A41 /* libAppAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B092A64271A93D9007C9A41 /* libAppAuth.a */; };
-		6B092A67271A93D9007C9A41 /* libFirebaseAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B092A65271A93D9007C9A41 /* libFirebaseAuth.a */; };
 		6B0950DB271A6C4700AAAF48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0950DA271A6C4700AAAF48 /* AppDelegate.swift */; };
 		6B0950DD271A6C4700AAAF48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0950DC271A6C4700AAAF48 /* SceneDelegate.swift */; };
 		6B0950DF271A6C4700AAAF48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0950DE271A6C4700AAAF48 /* ViewController.swift */; };
@@ -42,8 +40,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B092A66271A93D9007C9A41 /* libAppAuth.a in Frameworks */,
-				6B092A67271A93D9007C9A41 /* libFirebaseAuth.a in Frameworks */,
 				181B50A8FF91C56C453AAE2F /* Pods_WariKan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,7 +112,6 @@
 				6B0950D4271A6C4700AAAF48 /* Frameworks */,
 				6B0950D5271A6C4700AAAF48 /* Resources */,
 				860F95D164CAD9AC4E00D3E2 /* [CP] Embed Pods Frameworks */,
-				972EBB440311C96EAF1503B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,23 +185,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WariKan/Pods-WariKan-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		972EBB440311C96EAF1503B1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WariKan/Pods-WariKan-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WariKan/Pods-WariKan-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WariKan/Pods-WariKan-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CE531AFBC38603CEB14B5B5C /* [CP] Check Pods Manifest.lock */ = {
