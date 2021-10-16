@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A887E582B018687D5F66DB3 /* libPods-WariKan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C787F5507B2839F52BAF7A9 /* libPods-WariKan.a */; };
+		181B50A8FF91C56C453AAE2F /* Pods_WariKan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFD658A7E75AA4FB211531C /* Pods_WariKan.framework */; };
+		6B092A66271A93D9007C9A41 /* libAppAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B092A64271A93D9007C9A41 /* libAppAuth.a */; };
+		6B092A67271A93D9007C9A41 /* libFirebaseAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B092A65271A93D9007C9A41 /* libFirebaseAuth.a */; };
 		6B0950DB271A6C4700AAAF48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0950DA271A6C4700AAAF48 /* AppDelegate.swift */; };
 		6B0950DD271A6C4700AAAF48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0950DC271A6C4700AAAF48 /* SceneDelegate.swift */; };
 		6B0950DF271A6C4700AAAF48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0950DE271A6C4700AAAF48 /* ViewController.swift */; };
@@ -18,7 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3C787F5507B2839F52BAF7A9 /* libPods-WariKan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WariKan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B092A64271A93D9007C9A41 /* libAppAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAppAuth.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B092A65271A93D9007C9A41 /* libFirebaseAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseAuth.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B0950D7271A6C4700AAAF48 /* WariKan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WariKan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B0950DA271A6C4700AAAF48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B0950DC271A6C4700AAAF48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +31,9 @@
 		6B0950E6271A6C4800AAAF48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B0950E8271A6C4800AAAF48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B0950EE271A82F200AAAF48 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6B6156A8271A99CE0089995F /* WariKan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WariKan.entitlements; sourceTree = "<group>"; };
 		BE6AD13B8BE30A603127E646 /* Pods-WariKan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WariKan.debug.xcconfig"; path = "Target Support Files/Pods-WariKan/Pods-WariKan.debug.xcconfig"; sourceTree = "<group>"; };
+		CBFD658A7E75AA4FB211531C /* Pods_WariKan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WariKan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B1055F49646BDA1F761B92 /* Pods-WariKan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WariKan.release.xcconfig"; path = "Target Support Files/Pods-WariKan/Pods-WariKan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,7 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A887E582B018687D5F66DB3 /* libPods-WariKan.a in Frameworks */,
+				6B092A66271A93D9007C9A41 /* libAppAuth.a in Frameworks */,
+				6B092A67271A93D9007C9A41 /* libFirebaseAuth.a in Frameworks */,
+				181B50A8FF91C56C453AAE2F /* Pods_WariKan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +54,9 @@
 		11809CB23B2E3CE866D9B2C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3C787F5507B2839F52BAF7A9 /* libPods-WariKan.a */,
+				6B092A64271A93D9007C9A41 /* libAppAuth.a */,
+				6B092A65271A93D9007C9A41 /* libFirebaseAuth.a */,
+				CBFD658A7E75AA4FB211531C /* Pods_WariKan.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -58,7 +67,6 @@
 				BE6AD13B8BE30A603127E646 /* Pods-WariKan.debug.xcconfig */,
 				E2B1055F49646BDA1F761B92 /* Pods-WariKan.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +91,7 @@
 		6B0950D9271A6C4700AAAF48 /* WariKan */ = {
 			isa = PBXGroup;
 			children = (
+				6B6156A8271A99CE0089995F /* WariKan.entitlements */,
 				6B0950DA271A6C4700AAAF48 /* AppDelegate.swift */,
 				6B0950DC271A6C4700AAAF48 /* SceneDelegate.swift */,
 				6B0950DE271A6C4700AAAF48 /* ViewController.swift */,
@@ -106,7 +115,8 @@
 				6B0950D3271A6C4700AAAF48 /* Sources */,
 				6B0950D4271A6C4700AAAF48 /* Frameworks */,
 				6B0950D5271A6C4700AAAF48 /* Resources */,
-				82902C0CA32644EC7E161720 /* [CP] Copy Pods Resources */,
+				860F95D164CAD9AC4E00D3E2 /* [CP] Embed Pods Frameworks */,
+				972EBB440311C96EAF1503B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -165,7 +175,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		82902C0CA32644EC7E161720 /* [CP] Copy Pods Resources */ = {
+		860F95D164CAD9AC4E00D3E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WariKan/Pods-WariKan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WariKan/Pods-WariKan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WariKan/Pods-WariKan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		972EBB440311C96EAF1503B1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -361,6 +388,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WariKan/WariKan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5T7Z9C78A9;
@@ -390,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WariKan/WariKan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5T7Z9C78A9;

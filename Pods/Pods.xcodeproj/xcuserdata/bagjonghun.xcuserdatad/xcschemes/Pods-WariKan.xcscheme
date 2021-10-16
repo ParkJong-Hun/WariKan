@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A06E23CCA4AF9F9C6EA95E44C58902EF"
-               BuildableName = "libPods-WariKan.a"
+               BuildableName = "Pods_WariKan.framework"
                BlueprintName = "Pods-WariKan"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
