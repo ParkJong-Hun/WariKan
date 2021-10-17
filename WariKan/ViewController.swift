@@ -15,15 +15,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //ログイン状態チェックして自動ログイン
+        if let _ = Auth.auth().currentUser {
+            guard let controller:UIViewController = self.storyboard?.instantiateViewController(withIdentifier: "Main") else { return }
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     func googleSignIn() {
+        // ファイアベースのClientIDをインスタンス化
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
 
-        // Create Google Sign In configuration object.
+        // Client IDを利用してグーグルログインConfigurationを生成
         let config = GIDConfiguration(clientID: clientID)
 
-        // Start the sign in flow!
+        // グーグルからログインしてCredentialをもらう
         GIDSignIn.sharedInstance.signIn(with: config, presenting: self) {( user, error) in
             if let error = error {
                 print("ログインエラーが起こりました：\(error.localizedDescription)")
