@@ -12,8 +12,12 @@ import FirebaseAuth
 class MainController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.hidesBackButton = true
+        
         buttonTable.delegate = self
         buttonTable.dataSource = self
+        
         buttonCollection.delegate = self
         buttonCollection.dataSource = self
         
@@ -40,6 +44,13 @@ extension MainController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 友達
+        if buttonTableCellList[indexPath.row] == "友達" {
+            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "TomodachiController") as? FriendController {
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+        }
+        // ログアウト
         if buttonTableCellList[indexPath.row] == "ログアウト" {
             do {
                 try Auth.auth().signOut()

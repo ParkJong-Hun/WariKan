@@ -107,6 +107,9 @@
                                                         <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                                         <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <segue destination="xh9-rD-do3" kind="push" id="xqe-WF-Rhh"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -135,6 +138,9 @@
                                                         <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                                         <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <segue destination="moR-1k-Vo4" kind="push" id="q9Z-6V-zKe"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -184,11 +190,102 @@
                     <connections>
                         <outlet property="buttonCollection" destination="zoG-dv-zCH" id="ddS-ej-0Pa"/>
                         <outlet property="buttonTable" destination="AZI-Bc-HUT" id="0SU-py-8XP"/>
+                        <segue destination="bTn-Aq-Cm2" kind="push" id="SYH-TL-hc8"/>
+                        <segue destination="VTv-GZ-I8t" kind="push" id="UM2-jH-JgZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STg-rQ-NO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1749.5999999999999" y="83.497536945812811"/>
+        </scene>
+        <!--割り勘-->
+        <scene sceneID="qtM-RB-lSh">
+            <objects>
+                <viewController storyboardIdentifier="WarikanController" title="割り勘" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xh9-rD-do3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ruh-HV-fby">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mHp-Ed-jeU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NWg-NH-3BH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TUW-jW-ugt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3596" y="-945"/>
+        </scene>
+        <!--奢り-->
+        <scene sceneID="gOw-Ce-9U3">
+            <objects>
+                <viewController storyboardIdentifier="OgoriController" title="奢り" useStoryboardIdentifierAsRestorationIdentifier="YES" id="moR-1k-Vo4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OvH-fg-Zeb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="aQI-Xe-FMd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9OS-uY-F3g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeL-TL-DU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3158" y="-233"/>
+        </scene>
+        <!--友達-->
+        <scene sceneID="p86-XL-464">
+            <objects>
+                <viewController storyboardIdentifier="TomodachiController" title="友達" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bTn-Aq-Cm2" customClass="FriendController" customModule="WariKan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Nu-5X-FCt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tzy-f0-TTz">
+                                <rect key="frame" x="20" y="140" width="335" height="638"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gmu-af-hlb">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gmu-af-hlb" id="wOR-8H-Per">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8da-HI-fQP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8da-HI-fQP" firstAttribute="trailing" secondItem="Tzy-f0-TTz" secondAttribute="trailing" constant="20" id="6nK-Ny-0gB"/>
+                            <constraint firstItem="Tzy-f0-TTz" firstAttribute="leading" secondItem="8da-HI-fQP" secondAttribute="leading" constant="20" id="FSX-eH-EVF"/>
+                            <constraint firstItem="Tzy-f0-TTz" firstAttribute="bottom" secondItem="8da-HI-fQP" secondAttribute="bottom" id="gLT-n6-RSS"/>
+                            <constraint firstItem="Tzy-f0-TTz" firstAttribute="top" secondItem="8da-HI-fQP" secondAttribute="top" id="ogK-Bt-WSU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="友達" id="tyM-VR-mup"/>
+                    <connections>
+                        <outlet property="tableView" destination="Tzy-f0-TTz" id="eOG-5u-RmB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8gb-Hl-lqi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3157.5999999999999" y="418.9655172413793"/>
+        </scene>
+        <!--勘定目録-->
+        <scene sceneID="kpF-xn-T9O">
+            <objects>
+                <viewController title="勘定目録" id="VTv-GZ-I8t" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3oB-0O-7bH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bZg-c9-ucX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="naA-ug-vQB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ztr-NL-Nkg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3596" y="1150"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e7X-9G-gcn">
