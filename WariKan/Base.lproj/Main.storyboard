@@ -172,6 +172,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在ログイン:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KE8-KU-4o1">
+                                <rect key="frame" x="246.33333333333334" y="131" width="108.66666666666666" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eyV-Dj-Jk7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P2S-yW-RHg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -182,6 +191,8 @@
                             <constraint firstItem="AZI-Bc-HUT" firstAttribute="bottom" secondItem="P2S-yW-RHg" secondAttribute="bottom" id="L9h-yH-N7k"/>
                             <constraint firstItem="P2S-yW-RHg" firstAttribute="trailing" secondItem="AZI-Bc-HUT" secondAttribute="trailing" constant="20" id="Ms3-pE-nLv"/>
                             <constraint firstItem="AZI-Bc-HUT" firstAttribute="leading" secondItem="P2S-yW-RHg" secondAttribute="leading" constant="20" id="Q9M-HN-jth"/>
+                            <constraint firstItem="zoG-dv-zCH" firstAttribute="top" secondItem="KE8-KU-4o1" secondAttribute="bottom" constant="8" symbolic="YES" id="feM-TD-4ud"/>
+                            <constraint firstItem="P2S-yW-RHg" firstAttribute="trailing" secondItem="KE8-KU-4o1" secondAttribute="trailing" constant="20" id="qDF-M7-fJZ"/>
                             <constraint firstItem="zoG-dv-zCH" firstAttribute="top" secondItem="P2S-yW-RHg" secondAttribute="top" constant="20" id="tw7-5Y-A8e"/>
                             <constraint firstItem="P2S-yW-RHg" firstAttribute="trailing" secondItem="zoG-dv-zCH" secondAttribute="trailing" constant="20" id="xv7-ob-klv"/>
                         </constraints>
@@ -190,6 +201,7 @@
                     <connections>
                         <outlet property="buttonCollection" destination="zoG-dv-zCH" id="ddS-ej-0Pa"/>
                         <outlet property="buttonTable" destination="AZI-Bc-HUT" id="0SU-py-8XP"/>
+                        <outlet property="currentLogin" destination="KE8-KU-4o1" id="UIw-xM-2KE"/>
                         <segue destination="bTn-Aq-Cm2" kind="push" id="SYH-TL-hc8"/>
                         <segue destination="VTv-GZ-I8t" kind="push" id="UM2-jH-JgZ"/>
                     </connections>
@@ -255,6 +267,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8da-HI-fQP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstItem="8da-HI-fQP" firstAttribute="trailing" secondItem="Tzy-f0-TTz" secondAttribute="trailing" constant="20" id="6nK-Ny-0gB"/>
                             <constraint firstItem="Tzy-f0-TTz" firstAttribute="leading" secondItem="8da-HI-fQP" secondAttribute="leading" constant="20" id="FSX-eH-EVF"/>
@@ -262,7 +275,13 @@
                             <constraint firstItem="Tzy-f0-TTz" firstAttribute="top" secondItem="8da-HI-fQP" secondAttribute="top" id="ogK-Bt-WSU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="友達" id="tyM-VR-mup"/>
+                    <navigationItem key="navigationItem" title="友達" id="tyM-VR-mup">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CXH-TW-ewW">
+                            <connections>
+                                <action selector="clickedAddButton:" destination="bTn-Aq-Cm2" id="n7N-Lb-ktU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Tzy-f0-TTz" id="eOG-5u-RmB"/>
                     </connections>
@@ -325,6 +344,9 @@
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

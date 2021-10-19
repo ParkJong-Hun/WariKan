@@ -10,7 +10,7 @@ import FirebaseAuth
 import Firebase
 
 class FriendController:UIViewController {
-    var friendName:[String] = []
+    var friendName = Set<String>()
     
     @IBOutlet var tableView:UITableView!
     
@@ -27,23 +27,59 @@ class FriendController:UIViewController {
         let db = Firestore.firestore()
         let auth = Auth.auth()
         
-        db.collection("users")
-            .document(auth.currentUser!.uid)
-            .collection("friends")
-            .getDocuments(completion: {(documents, error) in
-                if let error = error {
-                    print("ユーザーエラー発生：\(error)")
-                } else {
-                    for document in documents!.documents {
-                        self.friendName.append(document.value(forKey: "uid") as! String)
+        DispatchQueue.global(qos: .userInteractive).sync {
+            db.collection("users")
+                .document(auth.currentUser!.uid)
+                .collection("friends")
+                .getDocuments(completion: {(documents, error) in
+                    if let error = error {
+                        print("ユーザーエラー発生：\(error)")
+                    } else {
+                        for document in documents!.documents {
+                            self.friendName.update(with:document["email"] as! String)
+                            print("hi")
+                        }
+                        self.tableView.reloadData()
                     }
-                }
-            })
-        
-        tableView.reloadData()
+                })
+        }
     }
-    
-    
+    // 友達追加
+    @IBAction func clickedAddButton(_ sender: Any) {
+        let db = Firestore.firestore()
+        let auth = Auth.auth()
+
+        let alert = UIAlertController(title: "友達追加", message: nil, preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        
+        alert.addAction(UIAlertAction(title: "登録", style: .default, handler: {_ in
+            guard let textField = alert.textFields?.first, let friendEmail = textField.text, !friendEmail.isEmpty else { return }
+            
+            db.collection("users")
+                .whereField("email", in: [friendEmail])
+                .getDocuments(completion: {(documents, error) in
+                    if let error = error {
+                        print("ユーザーエラー発生：\(error)")
+                    } else {
+                        for document in documents!.documents {
+                            var data = [String : Any]()
+                            data["email"] = friendEmail
+                            data["uid"] = document["uid"]
+                            
+                            db.collection("users")
+                                .document(auth.currentUser!.uid)
+                                .collection("friends")
+                                .addDocument(data: data)
+                            break
+                        }
+                    }
+                })
+        }))
+        
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension FriendController:UITableViewDelegate, UITableViewDataSource {
@@ -52,6 +88,8 @@ extension FriendController:UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        let index = friendName.index(friendName.startIndex, offsetBy: indexPath.row)
+        cell.textLabel?.text = friendName[index]
         return cell
     }
 }

@@ -23,12 +23,18 @@ class MainController: UIViewController {
         
         buttonTable.layer.cornerRadius = 5;
     }
+    override func viewWillAppear(_ animated: Bool) {
+        let auth = Auth.auth()
+        guard let email:String = auth.currentUser?.email else { return }
+        currentLogin.text = "現在ログイン：" + email
+    }
     
     let buttonCollectionCellList = ["割り勘", "奢り"]
     let buttonTableCellList = ["友達", "勘定目録", "ログアウト"]
     
     @IBOutlet weak var buttonCollection: UICollectionView!
     @IBOutlet weak var buttonTable: UITableView!
+    @IBOutlet weak var currentLogin: UILabel!
 }
 
 //　テーブルボタンリスト
@@ -61,6 +67,7 @@ extension MainController: UITableViewDelegate, UITableViewDataSource {
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
 }
 
 // コレクションボタンリスト
