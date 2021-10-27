@@ -325,11 +325,53 @@
                     <connections>
                         <outlet property="tableView" destination="Tzy-f0-TTz" id="acQ-Mi-0Wq"/>
                         <outlet property="tableViewFollow" destination="FUz-SM-aR4" id="8UZ-oq-zEc"/>
+                        <segue destination="xu5-T4-jd4" kind="push" id="Eag-uJ-0nZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gb-Hl-lqi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3157.5999999999999" y="418.9655172413793"/>
+        </scene>
+        <!--フォローワー-->
+        <scene sceneID="12J-2b-ady">
+            <objects>
+                <viewController storyboardIdentifier="FollwerController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xu5-T4-jd4" customClass="FollowerController" customModule="WariKan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bXf-ai-TIi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eLX-8q-fdi">
+                                <rect key="frame" x="20" y="140" width="335" height="638"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8fz-XU-rLA">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8fz-XU-rLA" id="lHW-0a-hx1">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1Zp-A4-2RS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Zp-A4-2RS" firstAttribute="trailing" secondItem="eLX-8q-fdi" secondAttribute="trailing" constant="20" id="AC9-9U-Bpf"/>
+                            <constraint firstItem="eLX-8q-fdi" firstAttribute="bottom" secondItem="1Zp-A4-2RS" secondAttribute="bottom" id="GES-Dh-Pu2"/>
+                            <constraint firstItem="eLX-8q-fdi" firstAttribute="top" secondItem="1Zp-A4-2RS" secondAttribute="top" id="eQf-KN-aWe"/>
+                            <constraint firstItem="eLX-8q-fdi" firstAttribute="leading" secondItem="1Zp-A4-2RS" secondAttribute="leading" constant="20" id="xH4-i1-H1s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="フォローワー" id="UH6-nV-MfU"/>
+                    <connections>
+                        <outlet property="tableView" destination="eLX-8q-fdi" id="br9-wD-oSu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ks-gR-Dzy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3964" y="418.9655172413793"/>
         </scene>
         <!--勘定目録-->
         <scene sceneID="kpF-xn-T9O">

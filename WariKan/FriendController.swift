@@ -11,7 +11,7 @@ import Firebase
 
 class FriendController:UIViewController {
     var friendName = Set<String>()
-    var followName = Set<String>()
+    var followerName = Set<String>()
     
     @IBOutlet var tableView:UITableView!
     @IBOutlet weak var tableViewFollow: UITableView!
@@ -58,7 +58,7 @@ class FriendController:UIViewController {
                                 .whereField("uid", in: [auth.currentUser!.uid])
                                 .getDocuments(completion: {(documents, error) in
                                     for _ in documents!.documents {
-                                        self.followName.update(with: document["uid"] as! String)
+                                        self.followerName.update(with: document["uid"] as! String)
                                     }
                                     self.tableViewFollow.reloadData()
                                 })
@@ -123,21 +123,21 @@ extension FriendController:UITableViewDelegate, UITableViewDataSource {
             let cell = UITableViewCell()
             
             var list:String = ""
-            if followName.count > 3 {
+            if followerName.count > 3 {
                 for i in 0..<3 {
-                    let index = followName.index(followName.startIndex, offsetBy: i)
-                    list += followName[index] + ", "
+                    let index = followerName.index(followerName.startIndex, offsetBy: i)
+                    list += followerName[index] + ", "
                 }
                 list.removeLast()
-            } else if followName.count > 0 {
-                for i in followName {
+            } else if followerName.count > 0 {
+                for i in followerName {
                     list += i + ", "
                 }
                 list.removeLast()
             } else {
                 list = "フォローワーがいません。"
             }
-            cell.detailTextLabel?.text = String(followName.count)
+            cell.detailTextLabel?.text = String(followerName.count)
             cell.textLabel?.text = list
             
             return cell
@@ -148,8 +148,10 @@ extension FriendController:UITableViewDelegate, UITableViewDataSource {
             //何も起こらない
             tableView.deselectRow(at: indexPath, animated: true)
         } else {
-            if followName.count != 0 {
-                //TODO: フォローワーリスト（お互いフォローできるような機能）移動
+            if followerName.count != 0 {
+                let controller = storyboard?.instantiateViewController(withIdentifier: "FollowerController") as! FollowerController
+                controller.followerName = [String](followerName)
+                present(controller, animated: true, completion: nil)
             }
             tableView.deselectRow(at: indexPath, animated: true)
         }
