@@ -52,7 +52,7 @@ extension MainController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 友達
         if buttonTableCellList[indexPath.row] == "友達" {
-            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "TomodachiController") as? FriendController {
+            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "FriendController") as? FriendController {
                 self.navigationController?.pushViewController(controller, animated: true)
             }
         }
@@ -64,6 +64,12 @@ extension MainController: UITableViewDelegate, UITableViewDataSource {
                 print("ログアウトエラー：\(signOutError)")
             }
             self.navigationController?.popToRootViewController(animated: true)
+        }
+        // 勘定目録
+        if buttonTableCellList[indexPath.row] == "勘定目録" {
+            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "PayListController") as? PayListController {
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -77,9 +83,20 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell:ButtonCollectionCell = buttonCollection.dequeueReusableCell(withReuseIdentifier: "Warikan", for: indexPath) as! ButtonCollectionCell
-        cell.button.titleLabel!.text = buttonCollectionCellList[indexPath.row]
+        let cell = buttonCollection.dequeueReusableCell(withReuseIdentifier: "Warikan", for: indexPath) as! ButtonCollectionCell
+        cell.button.setTitle(buttonCollectionCellList[indexPath.row], for: .normal)
+        // TODO: テクストサイズ
         cell.layer.cornerRadius = 5;
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller:UIViewController
+        if buttonCollectionCellList[indexPath.row] == "割り勘" {
+            controller = storyboard?.instantiateViewController(withIdentifier: "DutchPayController") as! DutchPayController
+        } else {
+            controller = storyboard?.instantiateViewController(withIdentifier: "GraceController") as! GraceController
+        }
+        self.navigationController?.pushViewController(controller, animated: true)
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }

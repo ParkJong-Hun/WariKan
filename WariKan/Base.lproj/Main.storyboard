@@ -104,7 +104,7 @@
                                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="割り勘">
-                                                        <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="30"/>
                                                         <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
                                                     <connections>
@@ -213,39 +213,108 @@
         <!--割り勘-->
         <scene sceneID="qtM-RB-lSh">
             <objects>
-                <viewController storyboardIdentifier="WarikanController" title="割り勘" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xh9-rD-do3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DutchPayController" title="割り勘" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xh9-rD-do3" customClass="DutchPayController" customModule="WariKan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ruh-HV-fby">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="mHp-Ed-jeU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NWg-NH-3BH"/>
+                    <navigationItem key="navigationItem" title="割り勘" id="NWg-NH-3BH"/>
+                    <connections>
+                        <segue destination="g2f-Hq-v2H" kind="push" id="gqo-yy-LB1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUW-jW-ugt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3596" y="-945"/>
         </scene>
+        <!--割り勘結果-->
+        <scene sceneID="eJ2-Ws-1aK">
+            <objects>
+                <viewController id="g2f-Hq-v2H" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Tg-yF-4oH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="76c-r6-H4p"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="割り勘結果" id="xAR-9c-jz8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggc-fN-0Jy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4382" y="-945"/>
+        </scene>
         <!--奢り-->
         <scene sceneID="gOw-Ce-9U3">
             <objects>
-                <viewController storyboardIdentifier="OgoriController" title="奢り" useStoryboardIdentifierAsRestorationIdentifier="YES" id="moR-1k-Vo4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GraceController" title="奢り" useStoryboardIdentifierAsRestorationIdentifier="YES" id="moR-1k-Vo4" customClass="GraceController" customModule="WariKan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OvH-fg-Zeb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nT8-3G-UDJ">
+                                <rect key="frame" x="338" y="140" width="21" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="０" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtV-xX-PFA">
+                                <rect key="frame" x="309" y="140" width="21" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tm0-VS-FsK">
+                                <rect key="frame" x="20" y="172" width="335" height="568"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合計：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzp-xK-XBe">
+                                <rect key="frame" x="20.000000000000004" y="140" width="61.333333333333343" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7j-XF-YdU">
+                                <rect key="frame" x="20" y="740" width="335" height="38"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="登録">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aQI-Xe-FMd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nT8-3G-UDJ" firstAttribute="leading" secondItem="JtV-xX-PFA" secondAttribute="trailing" constant="8" symbolic="YES" id="4Jj-y3-clN"/>
+                            <constraint firstItem="tm0-VS-FsK" firstAttribute="top" secondItem="nT8-3G-UDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="5h8-d4-xTL"/>
+                            <constraint firstItem="H7j-XF-YdU" firstAttribute="leading" secondItem="aQI-Xe-FMd" secondAttribute="leading" constant="20" id="HlK-WM-5oY"/>
+                            <constraint firstItem="Vzp-xK-XBe" firstAttribute="leading" secondItem="aQI-Xe-FMd" secondAttribute="leading" constant="20" id="JzB-DZ-gwt"/>
+                            <constraint firstItem="H7j-XF-YdU" firstAttribute="bottom" secondItem="aQI-Xe-FMd" secondAttribute="bottom" id="KGG-8e-EV8"/>
+                            <constraint firstItem="Vzp-xK-XBe" firstAttribute="top" secondItem="aQI-Xe-FMd" secondAttribute="top" id="Q1r-LY-ay4"/>
+                            <constraint firstItem="JtV-xX-PFA" firstAttribute="top" secondItem="aQI-Xe-FMd" secondAttribute="top" id="Scq-61-ESF"/>
+                            <constraint firstItem="tm0-VS-FsK" firstAttribute="leading" secondItem="aQI-Xe-FMd" secondAttribute="leading" constant="20" id="Xpf-Zs-y0W"/>
+                            <constraint firstItem="nT8-3G-UDJ" firstAttribute="top" secondItem="aQI-Xe-FMd" secondAttribute="top" id="bEn-RE-vBD"/>
+                            <constraint firstItem="aQI-Xe-FMd" firstAttribute="trailing" secondItem="nT8-3G-UDJ" secondAttribute="trailing" constant="16" id="h0a-Eg-BUW"/>
+                            <constraint firstItem="H7j-XF-YdU" firstAttribute="top" secondItem="tm0-VS-FsK" secondAttribute="bottom" id="jnK-0V-FuS"/>
+                            <constraint firstItem="aQI-Xe-FMd" firstAttribute="trailing" secondItem="tm0-VS-FsK" secondAttribute="trailing" constant="20" id="mmX-LZ-8uw"/>
+                            <constraint firstItem="aQI-Xe-FMd" firstAttribute="trailing" secondItem="H7j-XF-YdU" secondAttribute="trailing" constant="20" id="urc-hl-hi1"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9OS-uY-F3g"/>
+                    <navigationItem key="navigationItem" title="奢り" id="9OS-uY-F3g">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Hhz-Sj-qfc"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xeL-TL-DU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3158" y="-233"/>
+            <point key="canvasLocation" x="3157.5999999999999" y="-233.49753694581281"/>
         </scene>
         <!--友達-->
         <scene sceneID="p86-XL-464">
             <objects>
-                <viewController storyboardIdentifier="TomodachiController" title="友達" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bTn-Aq-Cm2" customClass="FriendController" customModule="WariKan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendController" title="友達" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bTn-Aq-Cm2" customClass="FriendController" customModule="WariKan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Nu-5X-FCt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,18 +445,30 @@
         <!--勘定目録-->
         <scene sceneID="kpF-xn-T9O">
             <objects>
-                <viewController title="勘定目録" id="VTv-GZ-I8t" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PayListController" title="勘定目録" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VTv-GZ-I8t" customClass="PayListController" customModule="WariKan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3oB-0O-7bH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4KA-D2-Git">
+                                <rect key="frame" x="20" y="140" width="335" height="638"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bZg-c9-ucX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4KA-D2-Git" firstAttribute="top" secondItem="bZg-c9-ucX" secondAttribute="top" id="KX2-l6-EXX"/>
+                            <constraint firstItem="4KA-D2-Git" firstAttribute="leading" secondItem="bZg-c9-ucX" secondAttribute="leading" constant="20" id="Q1n-aP-Tgb"/>
+                            <constraint firstItem="bZg-c9-ucX" firstAttribute="trailing" secondItem="4KA-D2-Git" secondAttribute="trailing" constant="20" id="VWr-h4-3ZF"/>
+                            <constraint firstItem="4KA-D2-Git" firstAttribute="bottom" secondItem="bZg-c9-ucX" secondAttribute="bottom" id="lmJ-yo-Yex"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="naA-ug-vQB"/>
+                    <navigationItem key="navigationItem" title="勘定目録" id="naA-ug-vQB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztr-NL-Nkg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3596" y="1150"/>
+            <point key="canvasLocation" x="3596" y="1149.7536945812808"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e7X-9G-gcn">
