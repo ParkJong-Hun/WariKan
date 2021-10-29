@@ -10,7 +10,7 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
-class ViewController: UIViewController {
+class LoginController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     
     override func viewDidLoad() {
