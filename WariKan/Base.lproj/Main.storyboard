@@ -239,6 +239,32 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SYf-bi-ozu">
                                 <rect key="frame" x="20" y="172" width="335" height="511"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="vNh-jb-Xa5" customClass="ItemCell" customModule="WariKan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="43.333332061767578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vNh-jb-Xa5" id="vbw-Z8-Eyx">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VP7-Le-erm">
+                                                    <rect key="frame" x="308.66666666666669" y="10.999999999999998" width="10.333333333333314" height="21.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VP7-Le-erm" firstAttribute="trailing" secondItem="vbw-Z8-Eyx" secondAttribute="trailingMargin" id="Lnq-f9-L5k"/>
+                                                <constraint firstItem="VP7-Le-erm" firstAttribute="top" secondItem="vbw-Z8-Eyx" secondAttribute="topMargin" id="Ym6-B7-o2i"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="VP7-Le-erm" secondAttribute="bottom" id="vs8-u6-LWS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cost" destination="VP7-Le-erm" id="1ah-Hc-xfo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="434-Cs-Yc5">
                                 <rect key="frame" x="20" y="691" width="335" height="38"/>
@@ -248,6 +274,9 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="clickedOkButton:" destination="xh9-rD-do3" eventType="touchUpInside" id="L4c-1K-wjw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mHp-Ed-jeU"/>
@@ -271,10 +300,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="割り勘" id="NWg-NH-3BH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TgL-TI-tK5"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TgL-TI-tK5">
+                            <connections>
+                                <action selector="clickedAddButton:" destination="xh9-rD-do3" id="yQH-lj-02A"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="TotLabel" destination="48k-sT-adv" id="BQX-Jm-qtf"/>
+                        <outlet property="tableView" destination="SYf-bi-ozu" id="zVS-hw-Nub"/>
                         <segue destination="g2f-Hq-v2H" kind="push" id="gqo-yy-LB1"/>
                     </connections>
                 </viewController>
@@ -285,7 +320,7 @@
         <!--割り勘分割-->
         <scene sceneID="eJ2-Ws-1aK">
             <objects>
-                <viewController id="g2f-Hq-v2H" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DutchPaySeperateController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g2f-Hq-v2H" customClass="DutchPaySeperateController" customModule="WariKan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Tg-yF-4oH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,7 +365,7 @@
         <!--割り勘結果-->
         <scene sceneID="o9i-Bn-SW9">
             <objects>
-                <viewController id="dSr-Qn-ZUT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DutchPayResultController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dSr-Qn-ZUT" customClass="DutchPayResultController" customModule="WariKan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ms-oh-0JF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -9,6 +9,8 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
+//OK
+
 class FollowerController:UIViewController {
     
     var followerName:[String] = []

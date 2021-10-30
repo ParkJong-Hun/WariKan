@@ -10,6 +10,8 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
+//OK
+
 class LoginController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     

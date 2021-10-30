@@ -9,6 +9,8 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
+//OK
+
 class FriendController:UIViewController {
     var friendName = Set<String>()
     var followerName = Set<String>()
