@@ -241,14 +241,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="vNh-jb-Xa5" customClass="ItemCell" customModule="WariKan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="43.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vNh-jb-Xa5" id="vbw-Z8-Eyx">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VP7-Le-erm">
-                                                    <rect key="frame" x="308.66666666666669" y="10.999999999999998" width="10.333333333333314" height="21.333333333333329"/>
+                                                    <rect key="frame" x="308.66666666666669" y="11" width="10.333333333333314" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -337,6 +337,9 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="clickedOkButton:" destination="g2f-Hq-v2H" eventType="touchUpInside" id="2a2-CG-qG9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="76c-r6-H4p"/>
@@ -352,9 +355,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="割り勘分割" id="xAR-9c-jz8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="F5Q-RC-c77"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="F5Q-RC-c77">
+                            <connections>
+                                <action selector="clickedAddButton:" destination="g2f-Hq-v2H" id="iSI-Rd-d1r"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="asd" destination="F5Q-RC-c77" id="0mS-j6-0yD"/>
                         <segue destination="dSr-Qn-ZUT" kind="push" id="4oq-ip-GLb"/>
                     </connections>
                 </viewController>
