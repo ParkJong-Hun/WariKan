@@ -23,10 +23,25 @@ class DutchPayController:UIViewController {
         tableView.dataSource = self
     }
     
-    @IBAction func clickedOkButton(_ sender: Any) {
+    @IBAction func clickedOkButton(_ sender: Any) {//　勘定目録に保存
+        /*let db = Firestore.firestore()
+        let auth = Auth.auth()
+        
+        var data:[String:Any] = [:]
+        for item in items {
+            data[item.itemTitle] = item.itemCost
+        }
+        data["WariKanSumItems"] = tot
+        data["WariKanBuyer"] = auth.currentUser?.uid
+        db.collection("payLists").document(UUID().uuidString).setData(data) { (error) in
+            print("勘定目録エラー発生：\(error.debugDescription)")
+        }*/
+        let controller = storyboard?.instantiateViewController(withIdentifier: "DutchPaySeperateController") as! DutchPaySeperateController
+        controller.items = items
+        navigationController?.pushViewController(controller, animated: true)
     }
     
-    @IBAction func clickedAddButton(_ sender: Any) {
+    @IBAction func clickedAddButton(_ sender: Any) {// 買った物を追加する
         let alert = UIAlertController(title: "物を追加", message: "タイトルと価格を入力してください", preferredStyle: .alert)
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "タイトル"

@@ -8,6 +8,8 @@
 import UIKit
 
 class DutchPaySeperateController: UIViewController {
+    var items:[Item] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
