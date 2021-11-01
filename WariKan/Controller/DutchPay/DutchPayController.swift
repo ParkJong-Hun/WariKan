@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
+
+// 割り勘
 
 class DutchPayController:UIViewController {
     var items:[Item] = []

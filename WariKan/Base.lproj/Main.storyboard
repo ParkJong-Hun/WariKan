@@ -241,14 +241,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="vNh-jb-Xa5" customClass="ItemCell" customModule="WariKan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="43"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vNh-jb-Xa5" id="vbw-Z8-Eyx">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="42.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VP7-Le-erm">
-                                                    <rect key="frame" x="308.66666666666669" y="11" width="10.333333333333314" height="21"/>
+                                                    <rect key="frame" x="308.66666666666669" y="11.000000000000002" width="10.333333333333314" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
