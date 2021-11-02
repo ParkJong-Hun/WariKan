@@ -13,8 +13,7 @@ import FirebaseFirestore
 
 class DutchPaySeperateController: UIViewController {
     var items:[Item] = []
-    var names:[String] = []
-    var moneys:[Int] = []
+    var seperates:[Seperate] = []
     var wariSwitch:Bool = false
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,15 +25,20 @@ class DutchPaySeperateController: UIViewController {
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "金額や割(%を入れると割）"
         })
-        alert.addAction(UIAlertAction(title: "登録", style: .default, handler: { [self]_ in
+        alert.addAction(UIAlertAction(title: "登録", style: .default, handler: {_ in
             let name = alert.textFields?.first?.text
             let money = alert.textFields?.last?.text
             if let name = name, let money = money {
-                names.append(name)
-                moneys.append(Int(money) ?? 0)
+                let seperate = Seperate()
+                seperate.name = name
+                seperate.money = Int(money) ?? 0
+                self.seperates.append(seperate)
             }
+            self.tableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
     }
     @IBAction func clickedOkButton(_ sender: Any) {
     }
@@ -52,10 +56,15 @@ class DutchPaySeperateController: UIViewController {
 
 extension DutchPaySeperateController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        names.count
+        seperates.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SeperateCell") as! SeperateCell
+        cell.textLabel?.text = seperates[indexPath.row].name
+        cell.money.text = String(seperates[indexPath.row].money)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
