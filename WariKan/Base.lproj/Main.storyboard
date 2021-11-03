@@ -420,6 +420,9 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="clickedOkButton:" destination="dSr-Qn-ZUT" eventType="touchUpInside" id="YP6-tq-ZSn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c1P-UP-RA9"/>
@@ -435,6 +438,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="割り勘結果" id="PaU-Ej-9Ee"/>
+                    <connections>
+                        <outlet property="result" destination="k7O-ES-qDm" id="n0s-Hg-Tqq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZT-eq-3Sm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

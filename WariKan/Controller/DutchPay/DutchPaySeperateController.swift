@@ -41,6 +41,15 @@ class DutchPaySeperateController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     @IBAction func clickedOkButton(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "DutchPayResultController") as! DutchPayResultController
+        controller.items = items
+        controller.seperates = seperates
+        controller.wariSwitch = wariSwitch
+        if (wariSwitch && seperates.map({$0.money}).reduce(0, {$0 + $1}) == 100) || !wariSwitch {
+            navigationController?.pushViewController(controller, animated: true)
+        } else {
+            
+        }
     }
     
     override func viewDidLoad() {
