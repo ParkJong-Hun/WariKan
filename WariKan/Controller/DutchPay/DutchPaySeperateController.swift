@@ -45,10 +45,10 @@ class DutchPaySeperateController: UIViewController {
         controller.items = items
         controller.seperates = seperates
         controller.wariSwitch = wariSwitch
-        if (wariSwitch && seperates.map({$0.money}).reduce(0, {$0 + $1}) == 100) || !wariSwitch {
+        if (wariSwitch && seperates.map({$0.money}).reduce(0, {$0 + $1}) == 100) || (!wariSwitch && seperates.map({$0.money}).reduce(0, {$0 + $1}) == items.map({$0.itemCost}).reduce(0, {$0 + $1})) {
             navigationController?.pushViewController(controller, animated: true)
         } else {
-            
+            //数値異常
         }
     }
     

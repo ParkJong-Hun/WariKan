@@ -38,20 +38,21 @@ class DutchPayResultController:UIViewController {
             print("勘定目録エラー発生：\(error.debugDescription)")
         }
         //TODO: 返す金額の部分
-        /*for seperate in seperates {
+        for seperate in seperates {
             if wariSwitch {
+                let resultMoney = Double(tot) * (Double(seperate.money) / Double(100))
                 db.collection("payLists")
                     .document(uuid)
                     .collection("payers")
                     .document(seperate.name)
-                    .setData(<#T##documentData: [String : Any]##[String : Any]#>)
+                    .setData([seperate.name:resultMoney])
             } else {
                 db.collection("payLists")
                     .document(uuid)
                     .collection("payers")
                     .document(seperate.name)
-                    .setData(<#T##documentData: [String : Any]##[String : Any]#>)
+                    .setData([seperate.name:seperate.money])
             }
-        }*/
+        }
     }
 }
