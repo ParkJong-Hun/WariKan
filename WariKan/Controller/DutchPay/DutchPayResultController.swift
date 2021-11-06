@@ -16,8 +16,30 @@ class DutchPayResultController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var textI = ""
+        var textS = ""
+        var textR = ""
+        let tot = items.map{$0.itemCost}.reduce(0, {$0 + $1})
+        for item in items {
+            textI += "\(item.itemTitle) : \(item.itemCost)円\n"
+        }
+        for seperate in seperates {
+            if wariSwitch {
+                let resultMoney = Double(tot) * (Double(seperate.money) / Double(100))
+                textS += "\(seperate.name) : \(resultMoney)円 (\(seperate.money))%\n"
+            } else {
+                textS += "\(seperate.name) : \(seperate.money)円\n"
+            }
+        }
+        textR = "合計 : \(tot)\n"
+        itemResult.text = textI
+        seperateResult.text = textS
+        result.text = textR
     }
     
+    @IBOutlet weak var itemResult: UILabel!
+    @IBOutlet weak var seperateResult: UILabel!
     @IBOutlet weak var result: UILabel!
     @IBAction func clickedOkButton(_ sender: Any) {
         let db = Firestore.firestore()
