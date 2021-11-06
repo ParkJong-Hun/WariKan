@@ -241,14 +241,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="vNh-jb-Xa5" customClass="ItemCell" customModule="WariKan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="42.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vNh-jb-Xa5" id="vbw-Z8-Eyx">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="42.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VP7-Le-erm">
-                                                    <rect key="frame" x="308.66666666666669" y="11.000000000000002" width="10.333333333333314" height="20.666666666666671"/>
+                                                    <rect key="frame" x="308.66666666666669" y="11.000000000000002" width="10.333333333333314" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -326,7 +326,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iSB-EX-piR">
-                                <rect key="frame" x="20" y="140" width="335" height="543"/>
+                                <rect key="frame" x="20" y="235" width="335" height="448"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SeperateCell" id="qmh-xd-k0y" customClass="SeperateCell" customModule="WariKan" customModuleProvider="target">
@@ -366,17 +366,44 @@
                                     <action selector="clickedOkButton:" destination="g2f-Hq-v2H" eventType="touchUpInside" id="2a2-CG-qG9"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8h-R0-t3F">
+                                <rect key="frame" x="306" y="140" width="51" height="31"/>
+                                <connections>
+                                    <action selector="clickedSwitch:" destination="g2f-Hq-v2H" eventType="valueChanged" id="Zdq-o4-QIc"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="％モード" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2B-z1-omC">
+                                <rect key="frame" x="228.66666666666666" y="140" width="69.333333333333343" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="w8d-wT-dpW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合計: 0円 残り: 0円" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hd-10-igr">
+                                <rect key="frame" x="270" y="179" width="85" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="76c-r6-H4p"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2hd-10-igr" firstAttribute="top" secondItem="f8h-R0-t3F" secondAttribute="bottom" constant="8" symbolic="YES" id="2Xd-NO-GI0"/>
+                            <constraint firstItem="iSB-EX-piR" firstAttribute="top" secondItem="2hd-10-igr" secondAttribute="bottom" constant="8" symbolic="YES" id="8TZ-NG-WSI"/>
                             <constraint firstItem="76c-r6-H4p" firstAttribute="trailing" secondItem="iSB-EX-piR" secondAttribute="trailing" constant="20" id="9zW-ad-uRn"/>
-                            <constraint firstItem="Nrd-fe-Dao" firstAttribute="top" secondItem="iSB-EX-piR" secondAttribute="bottom" constant="8" symbolic="YES" id="JQm-Cn-P65"/>
+                            <constraint firstItem="R2B-z1-omC" firstAttribute="top" secondItem="76c-r6-H4p" secondAttribute="top" id="DE6-FO-tSe"/>
+                            <constraint firstItem="f8h-R0-t3F" firstAttribute="leading" secondItem="R2B-z1-omC" secondAttribute="trailing" constant="8" symbolic="YES" id="O8t-UD-ScJ"/>
+                            <constraint firstItem="76c-r6-H4p" firstAttribute="trailing" secondItem="f8h-R0-t3F" secondAttribute="trailing" constant="20" id="Oqm-p8-3Dr"/>
                             <constraint firstItem="Nrd-fe-Dao" firstAttribute="bottom" secondItem="76c-r6-H4p" secondAttribute="bottom" id="Q2R-fY-153"/>
                             <constraint firstAttribute="trailing" secondItem="Nrd-fe-Dao" secondAttribute="trailing" constant="20" symbolic="YES" id="Wah-ie-c0K"/>
+                            <constraint firstItem="Nrd-fe-Dao" firstAttribute="top" secondItem="iSB-EX-piR" secondAttribute="bottom" constant="8" symbolic="YES" id="eYn-Bz-t8P"/>
                             <constraint firstItem="Nrd-fe-Dao" firstAttribute="leading" secondItem="5Tg-yF-4oH" secondAttribute="leading" constant="20" symbolic="YES" id="fZ2-ic-frP"/>
                             <constraint firstItem="iSB-EX-piR" firstAttribute="leading" secondItem="76c-r6-H4p" secondAttribute="leading" constant="20" id="fxr-gJ-ZUe"/>
-                            <constraint firstItem="iSB-EX-piR" firstAttribute="top" secondItem="76c-r6-H4p" secondAttribute="top" id="hwE-XF-D3J"/>
+                            <constraint firstItem="f8h-R0-t3F" firstAttribute="top" secondItem="76c-r6-H4p" secondAttribute="top" id="uON-b6-uiY"/>
+                            <constraint firstItem="76c-r6-H4p" firstAttribute="trailing" secondItem="2hd-10-igr" secondAttribute="trailing" constant="20" id="zVg-04-UWm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="割り勘分割" id="xAR-9c-jz8">
@@ -387,7 +414,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="modeLabel" destination="R2B-z1-omC" id="iga-XZ-Go6"/>
                         <outlet property="tableView" destination="iSB-EX-piR" id="kfg-xe-ggn"/>
+                        <outlet property="totReminderLabel" destination="2hd-10-igr" id="l9e-hU-XUz"/>
                         <segue destination="dSr-Qn-ZUT" kind="push" id="4oq-ip-GLb"/>
                     </connections>
                 </viewController>
