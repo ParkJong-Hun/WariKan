@@ -241,14 +241,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="vNh-jb-Xa5" customClass="ItemCell" customModule="WariKan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vNh-jb-Xa5" id="vbw-Z8-Eyx">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VP7-Le-erm">
-                                                    <rect key="frame" x="308.66666666666669" y="11.000000000000002" width="10.333333333333314" height="21.666666666666671"/>
+                                                    <rect key="frame" x="308.66666666666669" y="11" width="10.333333333333314" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -317,6 +317,33 @@
             </objects>
             <point key="canvasLocation" x="3596" y="-945.07389162561583"/>
         </scene>
+        <!--友達選択-->
+        <scene sceneID="Zsf-xQ-nyP">
+            <objects>
+                <viewController storyboardIdentifier="DutchPaySelectFriendController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FJr-wl-oGD" customClass="DutchPaySelectFriendController" customModule="WariKan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9VU-cS-GLR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R5X-g4-ZC4">
+                                <rect key="frame" x="16" y="140" width="343" height="589"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y7h-Th-1VQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="友達選択" id="ly2-c9-3AQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="thP-X4-E3G"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U5H-aw-9Gi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5157.6000000000004" y="-1608.6206896551726"/>
+        </scene>
         <!--割り勘分割-->
         <scene sceneID="eJ2-Ws-1aK">
             <objects>
@@ -366,7 +393,7 @@
                                     <action selector="clickedOkButton:" destination="g2f-Hq-v2H" eventType="touchUpInside" id="2a2-CG-qG9"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8h-R0-t3F">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f8h-R0-t3F">
                                 <rect key="frame" x="306" y="140" width="51" height="31"/>
                                 <connections>
                                     <action selector="clickedSwitch:" destination="g2f-Hq-v2H" eventType="valueChanged" id="Zdq-o4-QIc"/>
@@ -418,6 +445,7 @@
                         <outlet property="tableView" destination="iSB-EX-piR" id="kfg-xe-ggn"/>
                         <outlet property="totReminderLabel" destination="2hd-10-igr" id="l9e-hU-XUz"/>
                         <segue destination="dSr-Qn-ZUT" kind="push" id="4oq-ip-GLb"/>
+                        <segue destination="FJr-wl-oGD" kind="push" id="tBn-Lw-s73"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggc-fN-0Jy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

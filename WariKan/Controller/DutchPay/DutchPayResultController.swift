@@ -54,12 +54,13 @@ class DutchPayResultController:UIViewController {
         }
         data["WariKanSumItems"] = tot
         data["WariKanBuyer"] = auth.currentUser?.uid
+        data["WariKanDate"] = Date()
         db.collection("payLists")
             .document(uuid)
             .setData(data) { (error) in
             print("勘定目録エラー発生：\(error.debugDescription)")
         }
-        //TODO: 返す金額の部分
+
         for seperate in seperates {
             if wariSwitch {
                 let resultMoney = Double(tot) * (Double(seperate.money) / Double(100))
@@ -76,5 +77,6 @@ class DutchPayResultController:UIViewController {
                     .setData([seperate.name:seperate.money])
             }
         }
+        navigationController?.popToRootViewController(animated: true)
     }
 }

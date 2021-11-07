@@ -14,17 +14,22 @@ import FirebaseFirestore
 class DutchPaySeperateController: UIViewController {
     var items:[Item] = []
     var seperates:[Seperate] = []
-    var wariSwitch:Bool = true
+    var wariSwitch:Bool = false
     
     @IBOutlet weak var totReminderLabel: UILabel!
     @IBOutlet weak var modeLabel: UILabel!
     @IBAction func clickedSwitch(_ sender: UISwitch) {
-        if sender.isOn {
-            modeLabel.text = "パーセントモード"
-            wariSwitch = true
+        modeLabel.text = sender.isOn ? "パーセントモード" : "金額モード"
+        wariSwitch = !wariSwitch
+        
+        let tot = self.items.map({$0.itemCost}).reduce(0, {$0 + $1})
+        let rem = self.seperates.map({$0.money}).reduce(0, {$0 + $1})
+        if self.wariSwitch {
+            self.totReminderLabel.text = "合計: 100% (\(tot)円)\n"
+            self.totReminderLabel.text! += "残り: \(100 - rem)%"
         } else {
-            modeLabel.text = "金額モード"
-            wariSwitch = false
+            self.totReminderLabel.text = "合計: \(tot)円\n"
+            self.totReminderLabel.text! += "残り: \(tot - rem)円"
         }
     }
     @IBOutlet weak var tableView: UITableView!
@@ -79,7 +84,8 @@ class DutchPaySeperateController: UIViewController {
         tableView.dataSource = self
         
         let tot = self.items.map({$0.itemCost}).reduce(0, {$0 + $1})
-        modeLabel = "パーセントモード"
+        
+        modeLabel.text = "金額モード"
         totReminderLabel.text = "合計: \(tot)円\n"
         totReminderLabel.text! += "残り: \(tot)円"
     }

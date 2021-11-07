@@ -17,6 +17,9 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         //ログイン状態チェックして自動ログイン
         if let _ = Auth.auth().currentUser {
             guard let controller:UIViewController = self.storyboard?.instantiateViewController(withIdentifier: "Main") else { return }
