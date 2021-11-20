@@ -30,9 +30,10 @@ class DutchPaySelectFriendController:UIViewController {
             })
         self.tableView.reloadData()
     }
+    
     @IBAction func clickedAddButton(_ sender: Any) {
         if !selectedFriend.isEmpty {
-            //TODO: 以前画面にデータ伝達
+            UserDefaults.standard.set(selectedFriend, forKey: "dutchPaySelectedFriend")
             navigationController?.popViewController(animated: true)
         }
     }

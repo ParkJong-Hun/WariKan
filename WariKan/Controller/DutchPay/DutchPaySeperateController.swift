@@ -35,34 +35,37 @@ class DutchPaySeperateController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBAction func clickedAddButton(_ sender: Any) {
         let alert = UIAlertController(title: "人を追加", message: "分割する人と金額や割を記入してください。", preferredStyle: .alert)
-        alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "名前"
-        })
+        alert.addAction(UIAlertAction(title: "友達の名前検索", style: .default, handler: {_ in
+            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "DutchPaySelectFriendController") {
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+        }))
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "金額や割(%を入れると割）"
         })
         alert.addAction(UIAlertAction(title: "登録", style: .default, handler: {_ in
-            let name = alert.textFields?.first?.text
-            let money = alert.textFields?.last?.text
-            if let name = name, let money = money {
-                let seperate = Seperate()
-                seperate.name = name
-                seperate.money = Int(money) ?? 0
-                self.seperates.append(seperate)
+            if let selectedFriend = UserDefaults.standard.string(forKey: "dutchPaySelectedFriend") {
+                UserDefaults.standard.removeObject(forKey: "dutchPaySelectedFriend")
+                let money = alert.textFields?.last?.text
+                if let money = money {
+                    let seperate = Seperate()
+                    seperate.name = selectedFriend
+                    seperate.money = Int(money) ?? 0
+                    self.seperates.append(seperate)
+                }
+                let tot = self.items.map({$0.itemCost}).reduce(0, {$0 + $1})
+                let rem = self.seperates.map({$0.money}).reduce(0, {$0 + $1})
+                if self.wariSwitch {
+                    self.totReminderLabel.text = "合計: 100% (\(tot)円)\n"
+                    self.totReminderLabel.text! += "残り: \(100 - rem)%"
+                } else {
+                    self.totReminderLabel.text = "合計: \(tot)円\n"
+                    self.totReminderLabel.text! += "残り: \(tot - rem)円"
+                }
+                self.tableView.reloadData()
             }
-            let tot = self.items.map({$0.itemCost}).reduce(0, {$0 + $1})
-            let rem = self.seperates.map({$0.money}).reduce(0, {$0 + $1})
-            if self.wariSwitch {
-                self.totReminderLabel.text = "合計: 100% (\(tot)円)\n"
-                self.totReminderLabel.text! += "残り: \(100 - rem)%"
-            } else {
-                self.totReminderLabel.text = "合計: \(tot)円\n"
-                self.totReminderLabel.text! += "残り: \(tot - rem)円"
-            }
-            self.tableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
-        
         present(alert, animated: true, completion: nil)
     }
     @IBAction func clickedOkButton(_ sender: Any) {
